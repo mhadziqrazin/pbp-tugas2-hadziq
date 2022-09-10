@@ -3,6 +3,7 @@ body {
     display: grid;
     justify-content: center;
     padding: 20px 20px;
+    font-size: 10px;
 
 }
 table {
@@ -18,7 +19,7 @@ table {
 }
 
 table th, tr, td {
-    padding: 24px 30px;
+    padding: 12px 15px;
 }
 
 table thead tr {
@@ -27,7 +28,7 @@ table thead tr {
     background-color: #37ae65;
     color: white;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 0.7rem;
 
 }
 
