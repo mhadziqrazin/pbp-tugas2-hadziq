@@ -6,6 +6,7 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'katalog.css' %}">
 </head>
+
 <body style="font-family:verdana">
   <h1 style="font-size: 25px; color: #38a863; text-align: center;">
     Lab 1 Assignment PBP/PBD
@@ -42,9 +43,9 @@
       {% for catalog in list_catalog %}
       <tr>
         <td>{{catalog.item_name}}</td>
-        <td>{{catalog.item_price}}</td>
-        <td>{{catalog.item_stock}}</td>
-        <td>{{catalog.rating}}</td>
+        <td style="text-align: center;">{{catalog.item_price}}</td>
+        <td style="text-align: center;">{{catalog.item_stock}}</td>
+        <td style="text-align: center;">{{catalog.rating}}</td>
         <td>{{catalog.description}}</td>
         <td><a href="{{catalog.item_url}}">{{catalog.item_url}}</a></td>
       </tr>
