@@ -7,15 +7,26 @@
   <link rel="stylesheet" href="{% static 'katalog.css' %}">
 </head>
 <body style="font-family:verdana">
-  <h1>Lab 1 Assignment PBP/PBD</h1>
+  <h1 style="font-size: 25px; color: #38a863; text-align: center;">
+    Lab 1 Assignment PBP/PBD
+  </h1>
 
-  <h5>Name: </h5>
-  <p>{{nama}}</p>
+  <table class="info">
+    <tbody>
+      <tr>
+        <td><b>Nama</b></td>
+        <td>:</td>
+        <td>{{nama}}</td>
+      </tr>
+      <tr>
+        <td><b>Student ID</b></td>
+        <td>:</td>
+        <td>{{id}}</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <h5>Student ID: </h5>
-  <p>{{id}}</p>
-
-  <table>
+  <table class="katalog">
     <thead>
       <tr>
         <th>Item Name</th>
@@ -35,7 +46,7 @@
         <td>{{catalog.item_stock}}</td>
         <td>{{catalog.rating}}</td>
         <td>{{catalog.description}}</td>
-        <td>{{catalog.item_url}}</td>
+        <td><a href="{{catalog.item_url}}">{{catalog.item_url}}</a></td>
       </tr>
       {% endfor %}
     </tbody>

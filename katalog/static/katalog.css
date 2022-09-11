@@ -2,11 +2,20 @@ body {
     border-collapse: collapse;
     display: grid;
     justify-content: center;
-    padding: 20px 20px;
+    padding: 30px 30px;
     font-size: 10px;
 
 }
-table {
+
+.info{
+    font-size: 15px;
+    color: #666;
+    border-collapse: collapse;
+    max-width: fit-content;
+    text-align: left;
+}
+
+.katalog {
     border-collapse: collapse;
     text-align: left;
     box-shadow:0 5px 10px #ababab;
@@ -14,30 +23,30 @@ table {
     padding: 170px 100px;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
-
-
+    margin: 25px 0;
 }
 
-table th, tr, td {
+.katalog th, tr, td {
     padding: 12px 15px;
 }
 
-table thead tr {
+.katalog thead tr {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     background-color: #37ae65;
     color: white;
     font-weight: bold;
     font-size: 0.7rem;
-
 }
 
-table tbody tr {
+.katalog tbody tr {
     border-bottom: 1px solid #ddd;
-
-
 }
 
-table tbody tr:nth-last-of-type(even) {
+.katalog tbody tr:nth-last-of-type(even) {
     background-color: rgb(238, 238, 238);
+}
+
+.katalog tbody tr:hover {
+    background-color: #e2ffec;
 }
