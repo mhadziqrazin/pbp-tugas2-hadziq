@@ -29,7 +29,7 @@
 
   <table class="katalog">
     <thead>
-      <tr>
+      <trbox-shadow:0 5px 10px #ababab;>
         <th>Item Name</th>
         <th>Item Price</th>
         <th>Item Stock</th>
@@ -43,7 +43,7 @@
       {% for catalog in list_catalog %}
       <tr>
         <td>{{catalog.item_name}}</td>
-        <td style="text-align: center;">{{catalog.item_price}}</td>
+        <td style="text-align: right;">{{catalog.item_price}}</td>
         <td style="text-align: center;">{{catalog.item_stock}}</td>
         <td style="text-align: center;">{{catalog.rating}}</td>
         <td>{{catalog.description}}</td>
