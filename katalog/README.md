@@ -15,11 +15,11 @@ Models tempat kita menyimpan data dalam bahasa Python. Data dari Models dapat di
 
 Views memiliki fungsi-fungsi yang dapat memanggil data dari Models dan me-render data tersebut ke template HTML.<br>
 
-Templates berisikan file HTML yang menjadi kerangka yang ingin ditampilkan ke user. Template dapat menerima data yang dikirim dari Views untuk ditampilkan.<br>
+Templates berisikan file HTML yang menjadi kerangka yang ingin ditampilkan ke client. Template dapat menerima data yang dikirim dari Views untuk ditampilkan.<br>
 
-User dapat melihat tampilan web yang dikirim dari template. User juga dapat melakukan request ke URL untuk memilih halaman mana yang ingin ditampilkan.<br>
+Client dapat melihat tampilan web yang dikirim dari template. Client juga dapat melakukan request ke URL untuk memilih halaman mana yang ingin ditampilkan.<br>
 
-URL menerima request dan memanggil fungsi yang ada di Views sesuai request user.
+URL menerima request dan memanggil fungsi yang ada di Views sesuai request client.
 
 #
 
