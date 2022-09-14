@@ -72,4 +72,9 @@ URL menerima request dan memanggil fungsi yang ada di Views sesuai request clien
       {% endfor %}
     ```
 
-4. Menambahkan Action Secrets (Secrets agar kita tidak perlu menaruh key kita pad arepository, tetapi bisa dipanggil dari kode kita) berupa nama aplikasi yang kita buat di Heroku, dan API key Heroku kita agar terhubung dengan repository project ini. Dengan begitu kita bisa men-deploy aplikasi kita dan membukanya dengan `herokuapp.com` sehingga tidak perlu lagi menjalankan secara lokal dan orang lain pun bisa melihat hasil kerja kita.
+4. Menambahkan Action Secrets (Secrets agar kita tidak perlu menaruh key kita pada repository, tetapi bisa dipanggil dari kode kita) berupa nama aplikasi yang kita buat di Heroku, dan API key Heroku kita agar terhubung dengan repository project ini. Dengan begitu kita bisa men-deploy aplikasi kita dan membukanya dengan `herokuapp.com` sehingga tidak perlu lagi menjalankan secara lokal dan orang lain pun bisa melihat hasil kerja kita.
+
+5. Langkah tambahan yang saya lakukan adalah menambah file CSS sebagai styling web HTML. Saya menambahkan styling untuk tabel dan judul agar tampilan web lebih menarik. File CSS akan di-link dengan file HTML dengan menambahkan load static `katalog.css` pada head HTML. Saya mempelajari cara melakukan ini dari Youtube dan beberapa artikel. Berikut adalah link video Youtube yang saya tonton untuk mempelajari CSS dan cara menghubungkannya:
+1. https://www.youtube.com/watch?v=QLL4KzFMfVw&t=1s
+2. https://www.youtube.com/watch?v=biI9OFH6Nmg&t=130s
+3. https://www.youtube.com/watch?v=Oy9K7iz3aa4
