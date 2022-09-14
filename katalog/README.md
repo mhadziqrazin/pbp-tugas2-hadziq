@@ -78,3 +78,11 @@ URL menerima request dan memanggil fungsi yang ada di Views sesuai request clien
 - https://www.youtube.com/watch?v=QLL4KzFMfVw&t=1s
 - https://www.youtube.com/watch?v=biI9OFH6Nmg&t=130s
 - https://www.youtube.com/watch?v=Oy9K7iz3aa4
+
+6. Langkah berikutnya saya mencoba melakukan bonus yakni testing. Saya melakukan testing url dengan memanggil fungsi reverse untuk mendapatkan url dari fungsi `show_catalog()` di `views.py`. Kemudian, mengecek apakah yang didapatkan sama dengan ketika memanggil fungsi `show_catalog()` pada web menggunakan resolve.
+    ```
+    class TestUrls(SimpleTestCase):
+        def test_show_catalog_url(self):
+            url = reverse('katalog:show_catalog')
+            self.assertEqual(resolve(url).func, show_catalog)
+    ```
