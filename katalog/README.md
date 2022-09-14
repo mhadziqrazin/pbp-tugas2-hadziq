@@ -29,9 +29,6 @@ URL menerima request dan memanggil fungsi yang ada di Views sesuai request clien
 #
 
 ## **Cara Mengimplementasikan Langkah-Langkah Pengerjaan Tugas 2**
-<br>
-
-### 
 1. Membuat fungsi `show_catalog()` pada `views.py` yang ada pada folder katalog. Fungsi `show_catalog()` mengambil semua objek dari `class CatalogItem` yang ada pada `models.py` dan memasukkannya ke dalam sebuah container, kemudian memasukkan container ke dalam sebuah dictionary bernama `context`. Dictionary `context` berisikan `data_catalog_item` (yang berisi CatalogItem), nama, dan id yang nantinya di-render ke dalam `katalog.html`.
     ```
     def show_catalog(request):
