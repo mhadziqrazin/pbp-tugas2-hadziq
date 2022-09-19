@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
+        "fields": {
+            "watched": "Already",
+            "title": "The Maze Runner",
+            "rating": 5,
+            "release_date": "September 17th, 2014",
+            "review": "This movie is so intense, stunning, and little bit of horror. I like how cool the actors are especially when they start running around in the middle of nowhere."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
+        "fields": {
+            "watched": "Already",
+            "title": "Top Gun: Maverick",
+            "rating": 5,
+            "release_date": "May 27th, 2022",
+            "review": "Just.. Amazing. I haven't watched that kind of stunning movie (You know, normal life movies.. no magic, no superpower..) in a long time. The amount of adrenaline and excitement is insane."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
+        "fields": {
+            "watched": "Already",
+            "title": "Knives Out",
+            "rating": 5,
+            "release_date": "November 27th, 2019",
+            "review": ""
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
+        "fields": {
+            "watched": "Already",
+            "title": "The Hobbit",
+            "rating": 5,
+            "release_date": "November 28th, 2012",
+            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+        }
+    }
+]

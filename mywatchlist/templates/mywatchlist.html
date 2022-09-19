@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'mywatchlist.css' %}">
+</head>
+
+<body style="font-family:verdana">
+  <h1 style="font-size: 25px; color: #38a863; text-align: center;">
+    Lab 1 Assignment PBP/PBD
+  </h1>
+
+  <table class="info">
+    <tbody>
+      <tr>
+        <td><b>Nama</b></td>
+        <td>:</td>
+        <td>{{nama}}</td>
+      </tr>
+      <tr>
+        <td><b>Student ID</b></td>
+        <td>:</td>
+        <td>{{id}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="katalog">
+    <thead>
+      <trbox-shadow:0 5px 10px #ababab;>
+        <th>Watched</th>
+        <th>Movie Title</th>
+        <th>Rating</th>
+        <th>Release Date</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% comment %} Add the data below this line {% endcomment %}
+      {% for movie in data_watchlist %}
+      <tr>
+        <td>{{movie.watched}}</td>
+        <td style="text-align: right;">{{movie.title}}</td>
+        <td style="text-align: center;">{{movie.rating}}</td>
+        <td style="text-align: center;">{{movie.release_date}}</td>
+        <td>{{movie.review}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% endblock content %}
+</body>
