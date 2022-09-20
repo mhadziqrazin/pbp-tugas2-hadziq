@@ -40,40 +40,40 @@
             "title": "Knives Out",
             "rating": 5,
             "release_date": "November 27th, 2019",
-            "review": ""
+            "review": "I love reading mystery, riddle, kinda detevtive book since I was a kid. And this movie is just like the visualization of what I read and as exciting as the book."
         }
     },
     {
         "model": "mywatchlist.mywatchlist",
         "pk": 5,
         "fields": {
-            "watched": "Already",
-            "title": "The Hobbit",
-            "rating": 5,
-            "release_date": "November 28th, 2012",
-            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+            "watched": "Haven't",
+            "title": "12 Angry",
+            "rating": "-",
+            "release_date": "April, 1957",
+            "review": "I don't know but people said this movie is great."
         }
     },
     {
         "model": "mywatchlist.mywatchlist",
         "pk": 6,
         "fields": {
-            "watched": "Already",
-            "title": "The Hobbit",
+            "watched": "Watched",
+            "title": "The Shawshank Redemption",
             "rating": 5,
-            "release_date": "November 28th, 2012",
-            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+            "release_date": "September 22nd, 1994",
+            "review": "Even tho this is a 90's movie, the cinematography is decent and the story is so deep and meaningful. Really recommended it."
         }
     },
     {
         "model": "mywatchlist.mywatchlist",
         "pk": 7,
         "fields": {
-            "watched": "Already",
-            "title": "The Hobbit",
-            "rating": 5,
+            "watched": "Haven't",
+            "title": "The Hunger Games",
+            "rating": "-",
             "release_date": "November 28th, 2012",
-            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+            "review": "Actually, I watched this movie when I was like 10 years old but, I already forgot the movie since I wasn't really interested in movie industry at that time, so let's count that as 'Havent' watched. But, many people said that this movie is amazing so I can't wait to watch this movie again!"
         }
     },
     {
@@ -81,10 +81,10 @@
         "pk": 8,
         "fields": {
             "watched": "Already",
-            "title": "The Hobbit",
-            "rating": 5,
-            "release_date": "November 28th, 2012",
-            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+            "title": "Mencuri Raden Saleh",
+            "rating": 4,
+            "release_date": "August 25th, 2022",
+            "review": "This is one of the best Indonesian movie I've watched. The story and the cinematography is amazing. But since it was a 2.5 hours long movie, Some part is kinda not as interesting as the others."
         }
     },
     {
@@ -92,10 +92,10 @@
         "pk": 9,
         "fields": {
             "watched": "Already",
-            "title": "The Hobbit",
+            "title": "Avatar",
             "rating": 5,
-            "release_date": "November 28th, 2012",
-            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+            "release_date": "December 17th, 2009",
+            "review": "This movie is as nostalgic as The Hobbit. I watched this movie when I was 7 years old and this is the best stunning looking movie I've wathced at that time, so insane than the others. The fantasy story is also blew my mind."
         }
     },
     {
@@ -103,10 +103,10 @@
         "pk": 10,
         "fields": {
             "watched": "Already",
-            "title": "The Hobbit",
+            "title": "The King's Speech",
             "rating": 5,
-            "release_date": "November 28th, 2012",
-            "review": "This movie is so surprising, intense, fierce, magical, stunning and so much more! This movie is so nostalgic since it was released when I was 9 years old"
+            "release_date": "February 17th, 2011",
+            "review": "Really love the story. It was so insightful since the movie told about King George VI who tries to overcome his stammering problem with the help of geniues speech therapist, Lionel Logue."
         }
     }
 ]
