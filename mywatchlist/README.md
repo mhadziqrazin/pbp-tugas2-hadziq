@@ -5,7 +5,10 @@
 
 #
 
-## Link deploy: **http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/**
+## Link deploy:
+**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/html**
+**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/xml**
+**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/json**
 
 #
 Jelaskan perbedaan antara JSON, XML, dan HTML!
@@ -132,3 +135,10 @@ Karena terpisah, data yang sudah disimpan perlu dikirim atau ditransfer ke file 
     ```
 
 7. Terakhir tinggal melakukan git add, commit, push, dan app akan otomatis di-deploy karena berada pada proyek yang sama dengan Tugas 2 yang sudah pernah berhasil di-deploy.
+
+#
+
+## **Postman**
+![Gambar]('../../html.png?raw=true')
+![Gambar]('../../xml.png?raw=true')
+![Gambar]('../../json.png?raw=true')
