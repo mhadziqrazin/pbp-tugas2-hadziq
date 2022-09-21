@@ -6,9 +6,9 @@
 #
 
 ## Link deploy:
-**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/html**
-**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/xml**
-**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/json**
+<br>**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/html**
+<br>**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/xml**
+<br>**http://pbp-tugas2-hadziq.herokuapp.com/mywatchlist/json**
 
 #
 Jelaskan perbedaan antara JSON, XML, dan HTML!
