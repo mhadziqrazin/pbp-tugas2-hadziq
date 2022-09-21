@@ -10,7 +10,7 @@ def show_watchlist(request):
     for movie in data_watchlist_item:
         if movie.watched == "Already":
             count += 1
-    if count >= 5:
+    if count >= len(data_watchlist_item) - count:
         pesan = "Selamat, kamu sudah banyak menonton!"
     else:
         pesan = "Wah, kamu masih sedikit menonton!"
@@ -23,11 +23,11 @@ def show_watchlist(request):
     }
     return render(request, "mywatchlist.html", context)
 
-def show_wishlist_xml(request):
+def show_watchlist_xml(request):
     data = MyWatchlist.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
-def show_wishlist_json(request):
+def show_watchlist_json(request):
     data = MyWatchlist.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 

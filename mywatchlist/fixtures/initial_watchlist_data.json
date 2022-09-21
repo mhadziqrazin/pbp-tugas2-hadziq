@@ -48,7 +48,7 @@
         "pk": 5,
         "fields": {
             "watched": "Haven't",
-            "title": "12 Angry",
+            "title": "12 Angry Man",
             "rating": "-",
             "release_date": "April, 1957",
             "review": "I don't know but people said this movie is great."
@@ -58,7 +58,7 @@
         "model": "mywatchlist.mywatchlist",
         "pk": 6,
         "fields": {
-            "watched": "Watched",
+            "watched": "Already",
             "title": "The Shawshank Redemption",
             "rating": 5,
             "release_date": "September 22nd, 1994",
@@ -82,7 +82,7 @@
         "fields": {
             "watched": "Already",
             "title": "Mencuri Raden Saleh",
-            "rating": 4,
+            "rating": 4.7,
             "release_date": "August 25th, 2022",
             "review": "This is one of the best Indonesian movie I've watched. The story and the cinematography is amazing. But since it was a 2.5 hours long movie, Some part is kinda not as interesting as the others."
         }

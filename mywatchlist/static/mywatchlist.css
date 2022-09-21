@@ -4,11 +4,12 @@ body {
     justify-content: center;
     padding: 30px 30px;
     font-size: 10px;
+    background-color: #111111;
 }
 
 .info{
     font-size: 15px;
-    color: #666;
+    color: rgb(158, 158, 158);
     border-collapse: collapse;
     max-width: fit-content;
     text-align: left;
@@ -17,10 +18,10 @@ body {
 .katalog {
     border-collapse: collapse;
     text-align: left;
-    box-shadow:0 5px 10px #ababab;
+    box-shadow: 0px 0px 7px #ff0000;
     background-color: white;
     padding: 170px 100px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 0px 30px 0px 30px;
     overflow: hidden;
     margin: 25px 0;
 }
@@ -32,21 +33,24 @@ body {
 .katalog thead tr {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    background-color: #37ae65;
-    color: white;
+    background-color: #dadada;
+    color: #c42d2d;
     font-weight: bold;
     font-size: 0.7rem;
     text-align: center;
 }
 
 .katalog tbody tr {
-    border-bottom: 1px solid #ddd;
+    background-color: #202020;
+    color: white;
+    border-bottom: 1px solid rgb(59, 59, 59);
 }
 
 .katalog tbody tr:nth-last-of-type(even) {
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(40, 40, 40);
 }
 
 .katalog tbody tr:hover {
-    background-color: #e2ffec;
+    background-color: #3e1010;
+    
 }

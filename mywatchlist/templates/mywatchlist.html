@@ -8,8 +8,8 @@
 </head>
 
 <body style="font-family:verdana">
-  <h1 style="font-size: 25px; color: #38a863; text-align: center;">
-    Lab 1 Assignment PBP/PBD
+  <h1 style="font-size: 25px; color: #f63838; text-align: center;">
+    TUGAS 3 ASSIGNMENT PBP/PBD
   </h1>
 
   <table class="info">
@@ -41,15 +41,15 @@
       {% comment %} Add the data below this line {% endcomment %}
       {% for movie in data_watchlist %}
       <tr>
-        <td>{{movie.watched}}</td>
-        <td style="text-align: right;">{{movie.title}}</td>
+        <td style="text-align: center;">{{movie.watched}}</td>
+        <td style="text-align: center;">{{movie.title}}</td>
         <td style="text-align: center;">{{movie.rating}}</td>
-        <td style="text-align: center;">{{movie.release_date}}</td>
+        <td style="text-align: left;">{{movie.release_date}}</td>
         <td>{{movie.review}}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <h1 style="text-align: center;">{{pesan}}</h1>
+  <h1 style="text-align: center; color: #ffb9b9;">{{pesan}}</h1>
   {% endblock content %}
 </body>
