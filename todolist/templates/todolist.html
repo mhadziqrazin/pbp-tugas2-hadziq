@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'todolist.css' %}">
+</head>
+
+<body style="font-family:verdana">
+  <h1 style="font-size: 25px; color: #f63838; text-align: center;">
+    ASSIGNMENT 4 PBP/PBD
+  </h1>
+
+  <!-- <table class="info">
+    <tbody>
+      <tr>
+        <td><b>Nama</b></td>
+        <td>:</td>
+        <td>{{nama}}</td>
+      </tr>
+      <tr>
+        <td><b>Student ID</b></td>
+        <td>:</td>
+        <td>{{id}}</td>
+      </tr>
+    </tbody>
+  </table> -->
+  <button><a href="{% url 'todolist:create_task' %}">Create a New Task</a></button>
+
+  <table>
+    <thead>
+      <trbox-shadow:0 5px 10px #ababab;>
+        <th>Date Created</th>
+        <th>Task</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in todolist_user %}
+      <tr>
+        <td style="text-align: center;">{{task.date}}</td>
+        <td style="text-align: center;">{{task.title}}</td>
+        <td style="text-align: center;">{{task.description}}</td></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h5>Sesi terakhir login: {{ last_login }}</h5>
+  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+  <!-- <h1 style="text-align: center; color: #ffb9b9;">{{pesan}}</h1> -->
+  {% endblock content %}
+</body>
