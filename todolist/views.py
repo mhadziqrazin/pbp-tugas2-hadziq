@@ -20,6 +20,12 @@ def show_todolist(request):
         if task.user == current_user:
             todolist_user.append(task)
 
+            if task.is_finished:
+                task.status = 'Selesai'
+            else:
+                task.status = 'Belum Selesai'
+
+
     context = {
         'todolist_user' : todolist_user,
         'last_login': request.COOKIES['last_login'],
@@ -77,3 +83,18 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+def delete_task(request, id):
+    task = Task.objects.filter(user = request.user).get(pk = id)
+    task.delete()
+    return redirect('todolist:show_todolist')
+
+def update_status(request, id):
+    task = Task.objects.filter(user = request.user).get(pk = id)
+    
+    if task.is_finished:
+        task.is_finished = False
+    else:
+        task.is_finished = True
+    task.save()
+    return redirect('todolist:show_todolist')
