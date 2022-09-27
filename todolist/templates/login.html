@@ -5,29 +5,39 @@
 {% endblock meta %}
 
 {% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+  
 
-<div class = "login">
+<div>
 
-    <h1>Login</h1>
+    <h1 class="header">Welcome!</h1>
+    <h3 class="second_header">a Todolist by Hadziq</h3>
 
-    <form method="POST" action="">
+    <form class="form_login" method="POST" action="">
         {% csrf_token %}
         <table>
             <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                <td class="text_input">Username</td>
+                <td class="titik_koma">:</td>
+                <td>
+                    <input type="text" name="username" placeholder="Username" class="form-control">
+                </td>
             </tr>
                     
             <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td class="text_input">Password</td>
+                <td class="titik_koma">:</td>
+                <td>
+                    <input type="password" name="password" placeholder="Password" class="form-control">
+                </td>
             </tr>
         </table>
+        <div class="div_login_btn">
+            <input class="btn login_btn" type="submit" value="LOGIN">
+        </div> 
     </form>
 
     {% if messages %}
@@ -37,8 +47,13 @@
             {% endfor %}
         </ul>
     {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+    
+    <table class="sign_up">
+        <td>
+            <a class="text_input">New here? </a>
+            <a class="link_sign_up" href="{% url 'todolist:register' %}">Sign up!</a>
+        </td>
+    </table>
 
 </div>
 

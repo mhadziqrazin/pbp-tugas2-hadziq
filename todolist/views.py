@@ -1,5 +1,4 @@
 import datetime
-import re 
 from django.shortcuts import render, redirect
 from todolist.models import Task
 from django.contrib.auth.forms import UserCreationForm
@@ -8,7 +7,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from todolist.forms_task import CreateNewTask
 
 
 @login_required(login_url='/todolist/login/')
@@ -46,6 +44,7 @@ def create_task(request):
 
     return render(request, 'create_task.html')
 
+
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
@@ -70,7 +69,7 @@ def login_user(request):
             response.set_cookie('last_login', str(datetime.datetime.now().strftime(("%d.%m.%Y %H:%M:%S")))) # membuat cookie last_login dan menambahkannya ke dalam response
             return response
         else:
-            messages.info(request, 'Username atau Password salah!')
+            messages.info(request, 'Wrong Username or Password!')
     context = {}
     return render(request, 'login.html', context)
 
