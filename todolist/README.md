@@ -76,7 +76,7 @@ username = request.POST.get('username')
     ```
 <br>
 
-# **Cara Mengimplementasikan Langkah-Langkah Pengerjaan Tugas 4**
+# 💻 **Cara Mengimplementasikan Langkah-Langkah Pengerjaan Tugas 4**
 
 **✅ Membuat suatu aplikasi baru bernama `todolist` di proyek tugas Django yang sudah digunakan sebelumnya.**
 
