@@ -57,7 +57,7 @@
       {% endfor %}
     </tbody>
   </table>
-  <h5>Sesi terakhir login: {{ last_login }}</h5>
+  <h5>Last login session: {{ last_login }}</h5>
   <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
   <!-- <h1 style="text-align: center; color: #ffb9b9;">{{pesan}}</h1> -->
   {% endblock content %}

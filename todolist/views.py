@@ -37,11 +37,17 @@ def create_task(request):
         task_title = request.POST['task_title']
         description = request.POST['description']
 
-        task = Task(title=task_title, description=description)
-        task.user = request.user
-        task.save()
-        return redirect('todolist:show_todolist')
-
+        valid = False
+        if isinstance(task_title, str) and isinstance(description, str):
+            if len(task_title.strip()) == len(description.strip()) != 0:
+                task = Task(title=task_title, description=description)
+                task.user = request.user
+                task.save()
+                valid = True
+                return redirect('todolist:show_todolist')
+        
+        if not valid:
+            messages.info(request, 'Please fill both fields with letter(s) or number(s)!')
     return render(request, 'create_task.html')
 
 
@@ -66,7 +72,7 @@ def login_user(request):
         if user is not None:
             login(request, user) # melakukan login terlebih dahulu
             response = HttpResponseRedirect(reverse("todolist:show_todolist")) # membuat response
-            response.set_cookie('last_login', str(datetime.datetime.now().strftime(("%d.%m.%Y %H:%M:%S")))) # membuat cookie last_login dan menambahkannya ke dalam response
+            response.set_cookie('last_login', str(datetime.datetime.now().strftime(("%d/%m/%Y %H:%M:%S")))) # membuat cookie last_login dan menambahkannya ke dalam response
             return response
         else:
             messages.info(request, 'Wrong Username or Password!')

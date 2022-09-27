@@ -31,6 +31,14 @@
                 <td><input type="submit" value="Cancel"></td>
             </form>
         </tr>
+
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}    
             
     </table>
 </div>
