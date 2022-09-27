@@ -12,36 +12,40 @@
     ASSIGNMENT 4 PBP/PBD
   </h1>
 
-  <!-- <table class="info">
+  <table class="info">
     <tbody>
       <tr>
-        <td><b>Nama</b></td>
-        <td>:</td>
-        <td>{{nama}}</td>
+        <td>Hello,</td>
       </tr>
       <tr>
-        <td><b>Student ID</b></td>
-        <td>:</td>
-        <td>{{id}}</td>
+        <td style="text-transform: capitalize; font-size: 23px;">
+          <b>{{name}}</b>!
+        </td>
       </tr>
+
     </tbody>
-  </table> -->
+  </table>
   <button><a href="{% url 'todolist:create_task' %}">Create a New Task</a></button>
 
   <table>
     <thead>
       <trbox-shadow:0 5px 10px #ababab;>
+        <th>Status</th>  
         <th>Date Created</th>
         <th>Task</th>
         <th>Description</th>
+        <th></th>
       </tr>
     </thead>
+
     <tbody>
       {% for task in todolist_user %}
       <tr>
         <td style="text-align: center;">{{task.date}}</td>
         <td style="text-align: center;">{{task.title}}</td>
-        <td style="text-align: center;">{{task.description}}</td></td>
+        <td style="text-align: center;">{{task.description}}</td>
+        <td style="text-align: center;">
+        </td>
       </tr>
       {% endfor %}
     </tbody>

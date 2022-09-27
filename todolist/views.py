@@ -14,14 +14,16 @@ from todolist.forms_task import CreateNewTask
 def show_todolist(request):
     data_todolist = Task.objects.all()
     todolist_user = []
+    current_user = request.user
 
     for task in data_todolist:
-        if task.user == request.user:
+        if task.user == current_user:
             todolist_user.append(task)
 
     context = {
         'todolist_user' : todolist_user,
         'last_login': request.COOKIES['last_login'],
+        'name' : current_user
     }
     return render(request, 'todolist.html', context)
 
@@ -40,7 +42,6 @@ def create_task(request):
 
     context = {'form' : form}
     return render(request, 'create_task.html', context)
-
 
 def register(request):
     form = UserCreationForm()
