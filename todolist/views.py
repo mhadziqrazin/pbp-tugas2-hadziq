@@ -39,7 +39,7 @@ def create_task(request):
 
         valid = False
         if isinstance(task_title, str) and isinstance(description, str):
-            if len(task_title.strip()) == len(description.strip()) != 0:
+            if len(task_title.strip()) != 0 and len(description.strip()) != 0:
                 task = Task(title=task_title, description=description)
                 task.user = request.user
                 task.save()
