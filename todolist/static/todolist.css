@@ -1,0 +1,7 @@
+body {
+    border-collapse: collapse;
+    display: grid;
+    justify-content: center;
+    padding: 30px 30px;
+    font-size: 10px;
+}

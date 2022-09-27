@@ -1,4 +1,5 @@
-import datetime 
+import datetime
+import re 
 from django.shortcuts import render, redirect
 from todolist.models import Task
 from django.contrib.auth.forms import UserCreationForm
@@ -12,13 +13,11 @@ from todolist.forms_task import CreateNewTask
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = Task.objects.all()
-    todolist_user = []
     current_user = request.user
+    data_todolist = Task.objects.filter(user = current_user)
 
     for task in data_todolist:
         if task.user == current_user:
-            todolist_user.append(task)
 
             if task.is_finished:
                 task.status = 'Selesai'
@@ -27,7 +26,7 @@ def show_todolist(request):
 
 
     context = {
-        'todolist_user' : todolist_user,
+        'data_todolist' : data_todolist,
         'last_login': request.COOKIES['last_login'],
         'name' : current_user
     }
@@ -36,18 +35,16 @@ def show_todolist(request):
 
 @login_required(login_url='/todolist/login/')
 def create_task(request):
-    form = CreateNewTask(request.POST)
     if request.method == 'POST':
-        form = CreateNewTask(request.POST)
+        task_title = request.POST['task_title']
+        description = request.POST['description']
 
-        if form.is_valid():
-            task = form.save(commit=False)
-            task.user = request.user
-            task.save()
-            return redirect('todolist:show_todolist')
+        task = Task(title=task_title, description=description)
+        task.user = request.user
+        task.save()
+        return redirect('todolist:show_todolist')
 
-    context = {'form' : form}
-    return render(request, 'create_task.html', context)
+    return render(request, 'create_task.html')
 
 def register(request):
     form = UserCreationForm()

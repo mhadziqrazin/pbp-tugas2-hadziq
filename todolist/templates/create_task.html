@@ -9,18 +9,30 @@
 <div class = "new_task">
 
     <h1>Create A New Task</h1>
+    <table>
+            <form method="POST" action="/todolist/create-task/">
+                {% csrf_token %}
+                <tr>
+                    <td>Title: </td>
+                    <td><input type="text" name="task_title" placeholder="Your task title" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><textarea name="description" class="form-control" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Create"></td>
+                
+                
+            </form>
 
-    <form method="POST" action="{% url 'todolist:create_task' %}">
-        {% csrf_token %}
-        <table>
-            {{ form }}
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Create"></td>
-            </tr>
-        </table>
-    </form>
-
+            <form method="GET" action="/todolist/">
+                <td><input type="submit" value="Cancel"></td>
+            </form>
+        </tr>
+            
+    </table>
 </div>
 
 {% endblock content %}

@@ -25,21 +25,24 @@
 
     </tbody>
   </table>
-  <button><a href="{% url 'todolist:create_task' %}">Create a New Task</a></button>
 
-  <table>
+  <form method="GET" action="create-task/">
+    <input class="btn create_btn" type="submit" value="Create New Task">
+  </form>
+
+  <table class="todolist">
     <thead>
-      <trbox-shadow:0 5px 10px #ababab;>
+      <tr>
         <th>Status</th>  
         <th>Date Created</th>
         <th>Task</th>
         <th>Description</th>
-        <th>Aksi</th>
+        <th>🗑</th>
       </tr>
     </thead>
 
     <tbody>
-      {% for task in todolist_user %}
+      {% for task in data_todolist %}
       <tr>
         <td style="text-align: center;">
           <button><a href="update_status/{{task.pk}}">{{task.status}}</a></button>
