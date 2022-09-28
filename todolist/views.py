@@ -15,13 +15,10 @@ def show_todolist(request):
     data_todolist = Task.objects.filter(user = current_user)
 
     for task in data_todolist:
-        if task.user == current_user:
-
-            if task.is_finished:
-                task.status = 'Selesai'
-            else:
-                task.status = 'Belum Selesai'
-
+        if task.is_finished:
+            task.status = 'Done'
+        else:
+            task.status = 'Not Yet'
 
     context = {
         'data_todolist' : data_todolist,
@@ -48,6 +45,7 @@ def create_task(request):
         
         if not valid:
             messages.info(request, 'Please fill both fields with letter(s) or number(s)!')
+    
     return render(request, 'create_task.html')
 
 
@@ -86,11 +84,15 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+
+@login_required(login_url='/todolist/login/')
 def delete_task(request, id):
     task = Task.objects.filter(user = request.user).get(pk = id)
     task.delete()
     return redirect('todolist:show_todolist')
 
+
+@login_required(login_url='/todolist/login/')
 def update_status(request, id):
     task = Task.objects.filter(user = request.user).get(pk = id)
     

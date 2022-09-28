@@ -7,18 +7,15 @@
   <link rel="stylesheet" href="{% static 'todolist.css' %}">
 </head>
 
-<body style="font-family:verdana">
-  <h1 style="font-size: 25px; color: #f63838; text-align: center;">
-    ASSIGNMENT 4 PBP/PBD
-  </h1>
+<body>
 
   <table class="info">
     <tbody>
       <tr>
-        <td>Hello,</td>
+        <td class="hello">Hello,</td>
       </tr>
       <tr>
-        <td style="text-transform: capitalize; font-size: 23px;">
+        <td class="name">
           <b>{{name}}</b>!
         </td>
       </tr>
@@ -26,9 +23,25 @@
     </tbody>
   </table>
 
-  <form method="GET" action="create-task/">
-    <input class="btn create_btn" type="submit" value="Create New Task">
-  </form>
+  <table>
+    <tr>
+      <th>
+        <form method="GET" action="create-task/">
+          <div class="div_create_btn">
+            <input class="btn create_btn" type="submit" value="Create New Task">
+          </div>
+        </form>
+      </th>
+      <th>
+        <div class="div_logout_btn">
+          <button class="logout_btn">
+            <a class="logout_link" href="{% url 'todolist:logout' %}">Logout</a>
+          </button>
+        </div>
+      </th>
+    </tr>
+  </table>
+  
 
   <table class="todolist">
     <thead>
@@ -37,7 +50,7 @@
         <th>Date Created</th>
         <th>Task</th>
         <th>Description</th>
-        <th>🗑</th>
+        <th>Delete</th>
       </tr>
     </thead>
 
@@ -45,19 +58,32 @@
       {% for task in data_todolist %}
       <tr>
         <td style="text-align: center;">
-          <button><a href="update_status/{{task.pk}}">{{task.status}}</a></button>
+          <div class="div_update_btn">
+            <button class="update_btn">
+              <a class="update_link" href="update_status/{{task.pk}}">{{task.status}}</a>
+            </button>
+          </div>
         </td>
         <td style="text-align: center;">{{task.date}}</td>
         <td style="text-align: center;">{{task.title}}</td>
         <td style="text-align: center;">{{task.description}}</td>
         <td style="text-align: center;">
-          <button><a href="delete/{{task.pk}}">Delete</a></button>
+          <div class="div_delete_btn">
+            <button class="delete_btn">
+              <a class="delete_link" href="delete/{{task.pk}}">❌</a>
+            </button>
+          </div>
         </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <h5>Last login session: {{ last_login }}</h5>
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+  <table class="last_session">
+    <td>
+      <h5>Last login session: {{ last_login }}</h5>
+    </td>
+  </table>
+
   {% endblock content %}
 </body>

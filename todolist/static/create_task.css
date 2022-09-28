@@ -1,0 +1,124 @@
+body {
+    border-collapse: collapse;
+    display: grid;
+    justify-content: center;
+    padding: 30px 30px;
+    font-size: 15px;
+    font-family: verdana;
+    background-color: rgb(32, 103, 70);
+    color: rgb(232, 255, 232);
+}
+
+.form_create {
+    text-align: center;
+    height: 100px;
+    width: 350px;
+    border-collapse: collapse;
+    background-color: #64646438;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px #aaffaa;
+}
+
+.header {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #1c3d2e;
+}
+
+.form-control {
+    border-style: hidden;
+    background-color: #E8FFE8;
+    border-radius: 2px 2px 2px 2px;
+    overflow: hidden;
+    padding: 5px 5px;
+    width: 200px;
+}
+
+.titik_koma {
+    padding-left: 5px;
+    padding-right: 10px;
+    text-shadow: 1px 1px 0px #1c3d2e;
+}
+
+.text_input {
+    text-align: left;
+    padding-left: 10px;
+    text-shadow: 1px 1px 0px #1c3d2e;
+}
+
+.table_button {
+    text-align: center;
+    height: 50px;
+    width: 350px;
+    border-collapse: collapse;
+    background-color: #64646438;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px #aaffaa;
+    margin-top: 10px;
+}
+
+.div_create_btn {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-right: 5px;
+}
+
+.create_btn {
+    height: 30px;
+    width: 80px;
+    background-color: #43936D;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+}
+
+.create_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+}
+
+.create_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}
+
+.div_cancel_btn {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-left: 5px;
+}
+
+.cancel_btn {
+    height: 30px;
+    width: 80px;
+    background-color: #43936D;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+}
+
+.cancel_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+}
+
+.cancel_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}

@@ -3,5 +3,211 @@ body {
     display: grid;
     justify-content: center;
     padding: 30px 30px;
-    font-size: 10px;
+    font-size: 15px;
+    font-family: verdana;
+    background-color: rgb(232, 255, 232);
+    color: rgb(32, 103, 70);
+}
+
+.info {
+    text-shadow: .5px .5px .5px #1c3d2e;
+    margin-bottom: 20px;
+}
+
+.hello {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.name {
+    text-transform: capitalize;
+    text-shadow: 1px 1px 0px #1c3d2e;
+    font-size: 50px;
+    color: #43936D;
+}
+
+.div_create_btn {
+    text-align: right;
+    padding-bottom: 20px; 
+    margin-right: 5px; 
+}
+
+.create_btn {
+    height: 40px;
+    width: 150px;
+    background-color: #43936D;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+    font-size: 15px;
+}
+
+.create_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+}
+
+.create_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+  }
+
+.todolist {
+    border-collapse: collapse;
+    background-color: #64646425;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px #aaffaa;
+    margin-bottom: 15px;
+}
+
+.todolist th, .todolist tr, .todolist td {
+    padding: 12px 19px;
+}
+
+.todolist thead tr {
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background-color: #43936D;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.todolist tbody tr:nth-last-of-type(even) {
+    background-color: #64646416;
+}
+
+.todolist tbody tr:hover {
+    background-color: #ffffff49;
+}
+
+.div_update_btn {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;  
+}
+
+.update_btn {
+    height: 40px;
+    width: 50px;
+    background-color: #549174;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+}
+
+.update_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+}
+
+.update_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}
+
+.update_link:link {
+    text-decoration: none;
+    color: #E8FFE8;
+}
+.update_link:visited {
+    text-decoration: none;
+    color: #E8FFE8;
+}
+
+.div_delete_btn {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;  
+}
+
+.delete_btn {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+}
+
+.delete_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+}
+
+.delete_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}
+
+.delete_link:link {
+    text-decoration: none;
+}
+
+.delete_link:visited {
+    text-decoration: none;
+}
+
+.div_logout_btn {
+    text-align: left;
+    padding-bottom: 20px;  
+    margin-left: 5px;  
+}
+
+.logout_btn {
+    height: 40px;
+    width: 150px;
+    background-color: #43936D;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+    font-size: 15px;
+}
+
+.logout_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+}
+
+.logout_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}
+
+.logout_link:link {
+    text-decoration: none;
+    color: #E8FFE8;
+}
+
+.logout_link:visited {
+    text-decoration: none;
+    color: #E8FFE8;
+}
+
+.last_session {
+    text-align: center;
+    height: 50px;
+    width: 350px;
+    border-collapse: collapse;
+    background-color: #6464641d;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px #aaffaa;
 }

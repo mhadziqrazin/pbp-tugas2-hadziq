@@ -5,32 +5,51 @@
 {% endblock meta %}
 
 {% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'create_task.css' %}">
+</head>
 
-<div class = "new_task">
+<div>
 
-    <h1>Create A New Task</h1>
-    <table>
+    <h1 class="header">Create A New Task</h1>
+    <div class="form_create">
+        <table>
             <form method="POST" action="/todolist/create-task/">
                 {% csrf_token %}
                 <tr>
-                    <td>Title: </td>
+                    <td class="text_input">Title</td>
+                    <td class="titik_koma">:</td>
                     <td><input type="text" name="task_title" placeholder="Your task title" class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>Description: </td>
-                    <td><textarea name="description" class="form-control" rows="3"></textarea></td>
+                    <td class="text_input">Description</td>
+                    <td class="titik_koma">:</td>
+                    <td><textarea name="description" class="form-control" rows="4"></textarea></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="Create"></td>
-                
-                
-            </form>
-
+        </table>
+    </div>
+        
+    <table class="table_button">
+            <tr>
+                <td>
+                    <div class="div_create_btn">
+                        <input class="create_btn" type="submit" value="Create">
+                    </div>
+                </td>
+        </form>
             <form method="GET" action="/todolist/">
-                <td><input type="submit" value="Cancel"></td>
+                <td>
+                    <div class="div_cancel_btn">
+                        <input class="cancel_btn" type="submit" value="Cancel">
+                    </div>
+                </td>
             </form>
         </tr>
+    </table>
+                
+
+            
 
         {% if messages %}
         <ul>
