@@ -1,4 +1,4 @@
-# PBP Tugas 3
+# PBP Tugas 4
 
 ## **Nama**     : Muhammad Hadziq Razin
 ## **NPM**      : 2106707076
@@ -145,31 +145,31 @@ Membuat halaman dengan membuat dan mengisi templates pada file `todolist.html`. 
 
 **✅ Membuat halaman form untuk pembuatan task.**
 
-Membuat file `forms_task.py` yang menampung model dan fields yang ingin ditampilkan pada form yakni `title` dan `description`. Kemudian membuat halaman dengan membuat dan mengisi templates pada file `create_task.html`. Tidak lupa membuat fungsi pada `views.py` yang memproses data-data yang dibutuhkan untuk ditampilkan pada halaman form create task.
-```
-class CreateNewTask(ModelForm):
-    class Meta:
-        model = Task
-        fields = ['title', 'description']
-```
+Membuat halaman dengan membuat dan mengisi templates pada file `create_task.html`. Membuat input field yang ingin ditampilkan pada form yakni `title` dan `description`. Tidak lupa membuat fungsi pada `views.py` yang memproses data-data yang dibutuhkan untuk ditampilkan pada halaman form create task.
 ```
 def create_task(request):
-    form = CreateNewTask(request.POST)
     if request.method == 'POST':
-        form = CreateNewTask(request.POST)
+        task_title = request.POST['task_title']
+        description = request.POST['description']
         ...
 ```
 ```
-<form method="POST" action="{% url 'todolist:create_task' %}">
-        {% csrf_token %}
+<div class="form_create">
         <table>
-            {{ form }}
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Create"></td>
-            </tr>
+            <form method="POST" action="/todolist/create-task/">
+                {% csrf_token %}
+                <tr>
+                    <td class="text_input">Title</td>
+                    <td class="titik_koma">:</td>
+                    <td><input type="text" name="task_title" placeholder="Your task title" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text_input">Description</td>
+                    <td class="titik_koma">:</td>
+                    <td><textarea name="description" class="form-control" rows="4"></textarea></td>
+                </tr>
         </table>
-    </form>
+    </div>
 ```
 <br>
 
@@ -185,3 +185,45 @@ urlpatterns = [
     path('create-task/', create_task, name='create_task'),
 ]
 ```
+<br>
+
+**✅ Membuat button untuk merubah status pengerjaan dan button untuk menghapus task**
+
+Menambahkan button update dan delete pada `todolist.html`. Button tersebut akan pergi ke path `update_status/<int:id>` dan `delete/<int:id`> yang akan memanggil fungsi di `views.py` yang akan memproses update status task dan memproses penghapusan task.
+```
+<button class="update_btn">
+    <a class="update_link" href="update_status/{{task.pk}}">{{task.status}}</a>
+</button>
+
+...
+
+<button class="delete_btn">
+    <a class="delete_link" href="delete/{{task.pk}}">❌</a>
+</button>
+```
+```
+urlpatterns = [
+    ...
+    path('delete/<int:id>', delete_task, name='delete'),
+    path('update_status/<int:id>', update_status, name='update_status'),
+]
+```
+```
+def update_status(request, id):
+    task = Task.objects.filter(user = request.user).get(pk = id)
+    task.is_finished = not task.is_finished
+    task.save()
+    return redirect('todolist:show_todolist')
+```
+```
+def delete_task(request, id):
+    task = Task.objects.filter(user = request.user).get(pk = id)
+    task.delete()
+    return redirect('todolist:show_todolist')
+```
+<br>
+
+**✅ Contoh dua akun pengguna dan tiga atau lebih task**
+
+<img width="950" alt="Screen Shot 2022-09-29 at 02 57 05" src="https://user-images.githubusercontent.com/88391977/192876968-fea9d722-5547-4032-92ab-76b9802e118f.png">
+<img width="866" alt="Screen Shot 2022-09-29 at 02 57 24" src="https://user-images.githubusercontent.com/88391977/192876989-1b2ec578-1f0e-4eb7-b949-05fab09da08b.png">

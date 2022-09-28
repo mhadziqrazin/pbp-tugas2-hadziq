@@ -95,10 +95,6 @@ def delete_task(request, id):
 @login_required(login_url='/todolist/login/')
 def update_status(request, id):
     task = Task.objects.filter(user = request.user).get(pk = id)
-    
-    if task.is_finished:
-        task.is_finished = False
-    else:
-        task.is_finished = True
+    task.is_finished = not task.is_finished
     task.save()
     return redirect('todolist:show_todolist')
