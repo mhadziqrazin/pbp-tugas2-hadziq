@@ -12,6 +12,7 @@ body {
 .info {
     text-shadow: .5px .5px .5px #1c3d2e;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .hello {
@@ -25,6 +26,49 @@ body {
     font-size: 50px;
     color: #43936D;
 }
+
+.card_group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    box-shadow: 3px 3px 0px #00000098;
+    background-color: #1c3d2e;
+    margin: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-style: hidden;
+    font-size: 15px;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    width: 500px;
+}
+
+.card:hover {
+    box-shadow: 4px 4px 0px #00000098;
+    background-color: #6ceab1;
+    color: rgb(45, 45, 45);
+    transition: .25s;
+}
+
+.title {
+    font-size: 17px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.date {
+    margin-top: 5px;
+    font-size: 8px;
+    text-align: left;
+    font-weight: lighter;
+}
+
 
 .div_create_btn {
     text-align: right;
@@ -47,6 +91,7 @@ body {
 .create_btn:hover {
     background-color: #57bb8c;
     transition: .15s;
+    cursor: pointer;
 }
 
 .create_btn:active {
@@ -56,47 +101,22 @@ body {
     transform: translateY(.5px);
   }
 
-.todolist {
-    border-collapse: collapse;
-    background-color: #64646425;
-    border-radius: 10px 10px 10px 10px;
-    overflow: hidden;
-    box-shadow: 0px 0px 3px #aaffaa;
-    margin-bottom: 15px;
-}
-
-.todolist th, .todolist tr, .todolist td {
-    padding: 12px 19px;
-}
-
-.todolist thead tr {
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    background-color: #43936D;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 0.7rem;
-    text-align: center;
-}
-
-.todolist tbody tr:nth-last-of-type(even) {
-    background-color: #64646416;
-}
-
-.todolist tbody tr:hover {
-    background-color: #ffffff49;
+.button {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .div_update_btn {
     text-align: center;
     padding-top: 20px;
-    padding-bottom: 10px;  
+    padding-bottom: 10px; 
+    margin-right: 5px;
 }
 
 .update_btn {
     height: 40px;
     width: 50px;
-    background-color: #549174;
+    background-color: #ffffff;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
     box-shadow: 1px 1.5px 0px #1c3d2e;
@@ -104,12 +124,13 @@ body {
 }
 
 .update_btn:hover {
-    background-color: #57bb8c;
+    background-color: rgba(255, 255, 255, 0.911);
     transition: .15s;
+    cursor: pointer;
 }
 
 .update_btn:active {
-    background-color: #43936D;
+    background-color: #ffffff;
     box-shadow: .5px 1px #132a1f;
     transform: translateX(.5px);
     transform: translateY(.5px);
@@ -117,11 +138,11 @@ body {
 
 .update_link:link {
     text-decoration: none;
-    color: #E8FFE8;
+    color: #1c3d2e;
 }
 .update_link:visited {
     text-decoration: none;
-    color: #E8FFE8;
+    color: #1c3d2e;
 }
 
 .div_delete_btn {
@@ -131,8 +152,8 @@ body {
 }
 
 .delete_btn {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 50px;
     background-color: white;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
@@ -141,12 +162,14 @@ body {
 }
 
 .delete_btn:hover {
-    background-color: #57bb8c;
+    background-color: rgba(255, 255, 255, 0.911);
     transition: .15s;
+    cursor: pointer;
+
 }
 
 .delete_btn:active {
-    background-color: #43936D;
+    background-color: #ffffff;
     box-shadow: .5px 1px #132a1f;
     transform: translateX(.5px);
     transform: translateY(.5px);
@@ -201,6 +224,9 @@ body {
 }
 
 .last_session {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
     text-align: center;
     height: 50px;
     width: 350px;

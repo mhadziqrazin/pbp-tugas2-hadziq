@@ -41,43 +41,34 @@
       </th>
     </tr>
   </table>
-  
 
-  <table class="todolist">
-    <thead>
-      <tr>
-        <th>Status</th>  
-        <th>Date Created</th>
-        <th>Task</th>
-        <th>Description</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
 
-    <tbody>
-      {% for task in data_todolist %}
-      <tr>
-        <td style="text-align: center;">
+  <div class="card_group">
+    {% for task in data_todolist %}
+      <div class="card">
+          <div class="title">
+            {{ task.title }}
+          </div>
+          <div class="date">
+            {{ task.date }}
+          </div>
+        <p>{{ task.description }}</p>
+        <div class="button">
           <div class="div_update_btn">
             <button class="update_btn">
               <a class="update_link" href="update_status/{{task.pk}}">{{task.status}}</a>
             </button>
           </div>
-        </td>
-        <td style="text-align: center;">{{task.date}}</td>
-        <td style="text-align: center;">{{task.title}}</td>
-        <td style="text-align: center;">{{task.description}}</td>
-        <td style="text-align: center;">
           <div class="div_delete_btn">
             <button class="delete_btn">
               <a class="delete_link" href="delete/{{task.pk}}">❌</a>
             </button>
           </div>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
 
   <table class="last_session">
     <td>
