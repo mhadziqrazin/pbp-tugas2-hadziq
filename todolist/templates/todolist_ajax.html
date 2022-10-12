@@ -23,7 +23,7 @@
     </tbody>
   </table>
 
-  <table>
+  <table class="btn_atas">
     <tr>
       <th>
         <form method="GET" action="create-task/">
@@ -44,29 +44,6 @@
 
 
   <div id="card_group">
-    <!-- {% for task in data_todolist %}
-      <div class="card">
-          <div class="title">
-            {{ task.title }}
-          </div>
-          <div class="date">
-            {{ task.date }}
-          </div>
-        <p>{{ task.description }}</p>
-        <div class="button">
-          <div class="div_update_btn">
-            <button class="update_btn">
-              <a class="update_link" href="update_status/{{task.pk}}">{{task.status}}</a>
-            </button>
-          </div>
-          <div class="div_delete_btn">
-            <button class="delete_btn">
-              <a class="delete_link" href="delete/{{task.pk}}">❌</a>
-            </button>
-          </div>
-        </div>
-      </div>
-    {% endfor %} -->
   </div>
 
 
@@ -86,8 +63,8 @@
           const todolist = await getDataJson()
           let card = ``
           todolist.forEach((task) => {
-              card += 
-              `<div class="card">
+              card += `\n
+              <div class="card">
                   <div class="title">
                       ${task.fields.title}
                   </div>
@@ -96,17 +73,18 @@
                   </div>
                   <p>${task.fields.description}</p>
                   <div class="button">
-                  <div class="div_update_btn">
-                      <button class="update_btn">
-                        <a class="update_link" href="update_status/{{task.pk}}">${task.fields.status}</a>
-                      </button>
+                      <div class="div_update_btn">
+                          <button class="update_btn">
+                            <a class="update_link" href="update-status/${task.pk}">${task.fields.status}</a>
+                          </button>
+                      </div>
+                      <div class="div_delete_btn">
+                          <button class="delete_btn">
+                            <a class="delete_link" href="delete/${task.pk}">❌</a>
+                          </button>
+                      </div>
                   </div>
-                  <div class="div_delete_btn">
-                      <button class="delete_btn">
-                        <a class="delete_link" href="delete/{{task.pk}}">❌</a>
-                      </button>
-                  </div>
-                </div>`
+              </div>`
           });
           document.getElementById('card_group').innerHTML = card
       }
