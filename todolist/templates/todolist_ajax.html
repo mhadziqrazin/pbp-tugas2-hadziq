@@ -145,7 +145,8 @@
 
       function delete_todolist(id) {
           console.log(id)
-          fetch("/todolist/delete/${id}").then(refreshTodolist)
+          let url = "/todolist/delete/" + id;
+          fetch(url)
       }
 
       document.getElementById('add_btn').onclick = show_modal
