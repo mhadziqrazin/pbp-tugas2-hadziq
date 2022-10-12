@@ -5,8 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.core import serializers
 
 
 @login_required(login_url='/todolist/login/')
@@ -27,12 +28,30 @@ def show_todolist(request):
     }
     return render(request, 'todolist.html', context)
 
+@login_required(login_url='/todolist/login/')
+def todolist_ajax(request):
+    context = {
+        'last_login': request.COOKIES['last_login'],
+        'name' : request.user,
+    }
+    return render(request, 'todolist_ajax.html', context)
+    
+
+def get_todolist_json(request):
+    tasks = Task.objects.filter(user = request.user)
+    for task in tasks:
+        if task.is_finished:
+            task.status = 'Done'
+        else:
+            task.status = 'Not Yet'
+    return HttpResponse(serializers.serialize('json', tasks))
+
 
 @login_required(login_url='/todolist/login/')
 def create_task(request):
     if request.method == 'POST':
-        task_title = request.POST['task_title']
-        description = request.POST['description']
+        task_title = request.POST.get('task_title')
+        description = request.POST.get('description')
 
         valid = False
         if isinstance(task_title, str) and isinstance(description, str):
@@ -41,12 +60,12 @@ def create_task(request):
                 task.user = request.user
                 task.save()
                 valid = True
-                return redirect('todolist:show_todolist')
+            return HttpResponse(b"Created", status=201)
         
         if not valid:
             messages.info(request, 'Please fill both fields with letter(s) or number(s)!')
     
-    return render(request, 'create_task.html')
+    return HttpResponseNotFound()
 
 
 def register(request):

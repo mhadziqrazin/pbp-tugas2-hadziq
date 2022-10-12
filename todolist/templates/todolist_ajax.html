@@ -23,7 +23,7 @@
     </tbody>
   </table>
 
-  <table class="btn_atas">
+  <table>
     <tr>
       <th>
         <form method="GET" action="create-task/">
@@ -43,8 +43,8 @@
   </table>
 
 
-  <div class="card_group">
-    {% for task in data_todolist %}
+  <div id="card_group">
+    <!-- {% for task in data_todolist %}
       <div class="card">
           <div class="title">
             {{ task.title }}
@@ -56,7 +56,7 @@
         <div class="button">
           <div class="div_update_btn">
             <button class="update_btn">
-              <a class="update_link" href="update-status/{{task.pk}}">{{task.status}}</a>
+              <a class="update_link" href="update_status/{{task.pk}}">{{task.status}}</a>
             </button>
           </div>
           <div class="div_delete_btn">
@@ -66,7 +66,7 @@
           </div>
         </div>
       </div>
-    {% endfor %}
+    {% endfor %} -->
   </div>
 
 
@@ -75,6 +75,44 @@
       <h5>Last login session: {{ last_login }}</h5>
     </td>
   </table>
+
+  <script>
+      async function getDataJson() {
+          return fetch("{% url 'todolist:get_todolist_json' %}").then((result) => result.json())
+      }
+
+      async function refreshTodolist() {
+          document.getElementById('card_group').innerHTML = ""
+          const todolist = await getDataJson()
+          let card = ``
+          todolist.forEach((task) => {
+              card += 
+              `<div class="card">
+                  <div class="title">
+                      ${task.fields.title}
+                  </div>
+                  <div class="date">
+                      ${task.fields.date}
+                  </div>
+                  <p>${task.fields.description}</p>
+                  <div class="button">
+                  <div class="div_update_btn">
+                      <button class="update_btn">
+                        <a class="update_link" href="update_status/{{task.pk}}">${task.fields.status}</a>
+                      </button>
+                  </div>
+                  <div class="div_delete_btn">
+                      <button class="delete_btn">
+                        <a class="delete_link" href="delete/{{task.pk}}">❌</a>
+                      </button>
+                  </div>
+                </div>`
+          });
+          document.getElementById('card_group').innerHTML = card
+      }
+
+      refreshTodolist()
+  </script>
 
   {% endblock content %}
 </body>
