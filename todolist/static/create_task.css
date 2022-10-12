@@ -84,6 +84,7 @@ body {
 .create_btn:hover {
     background-color: #57bb8c;
     transition: .15s;
+    cursor: pointer;
 }
 
 .create_btn:active {
@@ -114,6 +115,7 @@ body {
 .cancel_btn:hover {
     background-color: #57bb8c;
     transition: .15s;
+    cursor: pointer;
 }
 
 .cancel_btn:active {

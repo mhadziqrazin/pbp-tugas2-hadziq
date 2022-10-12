@@ -60,12 +60,13 @@ def create_task(request):
                 task.user = request.user
                 task.save()
                 valid = True
-            return HttpResponse(b"Created", status=201)
+            return HttpResponse(b"CREATED", status=201)
         
         if not valid:
             messages.info(request, 'Please fill both fields with letter(s) or number(s)!')
     
-    return HttpResponseNotFound()
+    return HttpResponse(b"ADDING", status=200)
+    # return render(request, 'create_task.html')
 
 
 def register(request):
@@ -108,7 +109,8 @@ def logout_user(request):
 def delete_task(request, id):
     task = Task.objects.filter(user = request.user).get(pk = id)
     task.delete()
-    return redirect('todolist:show_todolist')
+    return HttpResponse(b"DELETED", status=201)
+    # return redirect('todolist:show_todolist')
 
 
 @login_required(login_url='/todolist/login/')

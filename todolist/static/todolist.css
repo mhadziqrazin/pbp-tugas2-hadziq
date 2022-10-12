@@ -31,6 +31,78 @@ body {
     justify-content: center;
 }
 
+.div_add_btn {
+    text-align: right;
+    padding-bottom: 20px; 
+    margin-right: 5px; 
+}
+
+.add_btn {
+    height: 40px;
+    width: 150px;
+    background-color: #43936D;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+    font-size: 15px;
+}
+
+.add_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.add_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}
+
+.div_logout_btn {
+    text-align: left;
+    padding-bottom: 20px;  
+    margin-left: 5px;  
+}
+
+.logout_btn {
+    height: 40px;
+    width: 150px;
+    background-color: #43936D;
+    color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+    font-size: 15px;
+}
+
+.logout_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.logout_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
+}
+
+.logout_link:link {
+    text-decoration: none;
+    color: #E8FFE8;
+}
+
+.logout_link:visited {
+    text-decoration: none;
+    color: #E8FFE8;
+}
+
 .card_group {
     display: flex;
     justify-content: center;
@@ -78,38 +150,6 @@ body {
     text-align: left;
     font-weight: lighter;
 }
-
-
-.div_create_btn {
-    text-align: right;
-    padding-bottom: 20px; 
-    margin-right: 5px; 
-}
-
-.create_btn {
-    height: 40px;
-    width: 150px;
-    background-color: #43936D;
-    color: #E8FFE8;
-    border-radius: 10px 10px 10px 10px;
-    overflow: hidden;
-    box-shadow: 1px 1.5px 0px #1c3d2e;
-    border-style: hidden;
-    font-size: 15px;
-}
-
-.create_btn:hover {
-    background-color: #57bb8c;
-    transition: .15s;
-    cursor: pointer;
-}
-
-.create_btn:active {
-    background-color: #43936D;
-    box-shadow: .5px 1px #132a1f;
-    transform: translateX(.5px);
-    transform: translateY(.5px);
-  }
 
 .button {
     display: flex;
@@ -193,44 +233,145 @@ body {
     text-decoration: none;
 }
 
-.div_logout_btn {
-    text-align: left;
-    padding-bottom: 20px;  
-    margin-left: 5px;  
+.modal_container {
+    background-color: rgba(0, 0, 0, 0.594);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition: 1s;
 }
 
-.logout_btn {
-    height: 40px;
-    width: 150px;
+.modal {
+    background-color: #E8FFE8;
+    position: fixed;
+    max-width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.form_create {
+    text-align: center;
+    height: 100px;
+    width: 350px;
+    border-collapse: collapse;
+    background-color: #64646438;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px #aaffaa;
+}
+
+.header {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0px #1c3d2e;
+}
+
+.form-control {
+    border-style: hidden;
+    background-color: #E8FFE8;
+    border-radius: 2px 2px 2px 2px;
+    overflow: hidden;
+    padding: 5px 5px;
+    width: 200px;
+}
+
+.titik_koma {
+    padding-left: 5px;
+    padding-right: 10px;
+    text-shadow: .5px .5px 0px #1c3d2e;
+}
+
+.text_input {
+    text-align: left;
+    padding-left: 10px;
+    text-shadow: .5px .5px 0px #1c3d2e;
+}
+
+.table_button {
+    height: 50px;
+    width: 350px;
+    border-collapse: collapse;
+    background-color: #64646438;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px #aaffaa;
+    margin-top: 10px;
+}
+
+.div_create_btn {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-right: 5px;
+}
+
+.create_btn {
+    height: 30px;
+    width: 80px;
     background-color: #43936D;
     color: #E8FFE8;
     border-radius: 10px 10px 10px 10px;
     overflow: hidden;
     box-shadow: 1px 1.5px 0px #1c3d2e;
     border-style: hidden;
-    font-size: 15px;
 }
 
-.logout_btn:hover {
+.create_btn:hover {
     background-color: #57bb8c;
     transition: .15s;
+    cursor: pointer;
 }
 
-.logout_btn:active {
+.create_btn:active {
     background-color: #43936D;
     box-shadow: .5px 1px #132a1f;
     transform: translateX(.5px);
     transform: translateY(.5px);
 }
 
-.logout_link:link {
-    text-decoration: none;
-    color: #E8FFE8;
+.div_cancel_btn {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-left: 5px;
 }
 
-.logout_link:visited {
-    text-decoration: none;
+.cancel_btn {
+    height: 30px;
+    width: 80px;
+    background-color: #43936D;
     color: #E8FFE8;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 1px 1.5px 0px #1c3d2e;
+    border-style: hidden;
+}
+
+.cancel_btn:hover {
+    background-color: #57bb8c;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.cancel_btn:active {
+    background-color: #43936D;
+    box-shadow: .5px 1px #132a1f;
+    transform: translateX(.5px);
+    transform: translateY(.5px);
 }
 
 .last_session {
