@@ -103,6 +103,7 @@ urlpatterns = [
 <br>
 
 **✅ AJAX POST**
+
 Membuat tombol untuk menampilkan modal, kemudian membuat fungsi pada `views.py` yang memproses _form_ dari modal, kemudian menambahkan path pada `urls.py`, kemudian membuat fungsi Ajax yang melakukan proses menyimpan form, tutup modal, dan terakhir _refresh_ page secara _asynchronous_.
 ```
 <button id="add_btn" class="add_btn">Create New Task</button>
@@ -149,7 +150,7 @@ function addTodolist() {
 ```
 <br>
 
-**✅ Implementasi delete button😎**
+**✅ Implementasi Delete Button😎**
 
 Membuat tombol delete, kemudian membuat fungsi pada `views.py` yang memproses penghapusan, kemudian menambahkan path pada `urls.py`, kemudian membuat fungsi Ajax yang memproses penghapusan, dan terakhir _refresh_ page secara _asynchronous_.
 ```
