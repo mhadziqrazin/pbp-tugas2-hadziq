@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.core import serializers
 
@@ -66,7 +66,6 @@ def create_task(request):
             messages.info(request, 'Please fill both fields with letter(s) or number(s)!')
     
     return HttpResponse(b"ADDING", status=200)
-    # return render(request, 'create_task.html')
 
 
 def register(request):
@@ -89,7 +88,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user) # melakukan login terlebih dahulu
-            response = HttpResponseRedirect(reverse("todolist:show_todolist")) # membuat response
+            response = HttpResponseRedirect(reverse("todolist:todolist_ajax")) # membuat response
             response.set_cookie('last_login', str(datetime.datetime.now().strftime(("%d/%m/%Y %H:%M:%S")))) # membuat cookie last_login dan menambahkannya ke dalam response
             return response
         else:
@@ -109,8 +108,7 @@ def logout_user(request):
 def delete_task(request, id):
     task = Task.objects.filter(user = request.user).get(pk = id)
     task.delete()
-    return HttpResponse(b"DELETED", status=201)
-    # return redirect('todolist:show_todolist')
+    return HttpResponse(b"DELETED", status=204)
 
 
 @login_required(login_url='/todolist/login/')

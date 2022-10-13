@@ -99,7 +99,6 @@
           const todolist = await getDataJson()
           let card = ``
           todolist.forEach((task) => {
-            console.log(task.fields.date)
               card += `\n
               <div class="card">
                   <div class="title">
@@ -144,15 +143,13 @@
       }
 
       function delete_todolist(id) {
-          console.log(id)
           let url = "/todolist/delete/" + id;
-          fetch(url)
+          fetch(url).then(refreshTodolist)
       }
 
       document.getElementById('add_btn').onclick = show_modal
       document.getElementById('create_btn').onclick = addTodolist
       document.getElementById('cancel_btn').onclick = cancel_modal
-      // document.getElementsByClassName('delete_btn').onclick = cancel_modal
       refreshTodolist()
 
   </script>
