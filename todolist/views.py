@@ -68,6 +68,27 @@ def create_task(request):
     return HttpResponse(b"ADDING", status=200)
 
 
+@login_required(login_url='/todolist/login/')
+def create_task_sync(request):
+    if request.method == 'POST':
+        task_title = request.POST['task_title']
+        description = request.POST['description']
+
+        valid = False
+        if isinstance(task_title, str) and isinstance(description, str):
+            if len(task_title.strip()) != 0 and len(description.strip()) != 0:
+                task = Task(title=task_title, description=description)
+                task.user = request.user
+                task.save()
+                valid = True
+                return redirect('todolist:show_todolist')
+        
+        if not valid:
+            messages.info(request, 'Please fill both fields with letter(s) or number(s)!')
+    
+    return render(request, 'create_task.html')
+
+
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
@@ -112,7 +133,22 @@ def delete_task(request, id):
 
 
 @login_required(login_url='/todolist/login/')
+def delete_task_sync(request, id):
+    task = Task.objects.filter(user = request.user).get(pk = id)
+    task.delete()
+    return redirect('todolist:show_todolist')
+
+
+@login_required(login_url='/todolist/login/')
 def update_status(request, id):
+    task = Task.objects.filter(user = request.user).get(pk = id)
+    task.is_finished = not task.is_finished
+    task.save()
+    return HttpResponse(b"CHANGED", status=204)
+
+
+@login_required(login_url='/todolist/login/')
+def update_status_sync(request, id):
     task = Task.objects.filter(user = request.user).get(pk = id)
     task.is_finished = not task.is_finished
     task.save()

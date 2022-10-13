@@ -26,7 +26,7 @@
   <table class="btn_atas">
     <tr>
       <th>
-        <form method="GET" action="create-task/">
+        <form method="GET" action="create-task-sync/">
           <div class="div_add_btn">
             <input class="btn add_btn" type="submit" value="Create New Task">
           </div>
@@ -56,12 +56,12 @@
         <div class="button">
           <div class="div_update_btn">
             <button class="update_btn">
-              <a class="update_link" href="update-status/{{task.pk}}">{{task.status}}</a>
+              <a class="update_link" href="update-status-sync/{{task.pk}}">{{task.status}}</a>
             </button>
           </div>
           <div class="div_delete_btn">
             <button class="delete_btn">
-              <a class="delete_link" href="delete/{{task.pk}}">❌</a>
+              <a class="delete_link" href="delete-sync/{{task.pk}}">❌</a>
             </button>
           </div>
         </div>

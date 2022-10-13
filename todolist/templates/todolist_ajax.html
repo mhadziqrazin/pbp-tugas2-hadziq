@@ -55,12 +55,12 @@
                 <tr>
                     <td class="text_input">Title</td>
                     <td class="titik_koma">:</td>
-                    <td><input type="text" name="task_title" placeholder="Your task title" class="form-control"></td>
+                    <td><input id="title_input" type="text" name="task_title" placeholder="Your task title" class="form-control"></td>
                 </tr>
                 <tr>
                     <td class="text_input">Description</td>
                     <td class="titik_koma">:</td>
-                    <td><textarea name="description" class="form-control" rows="4"></textarea></td>
+                    <td><textarea id="description_input" name="description" class="form-control" rows="4"></textarea></td>
                 </tr>
         </table>
       </div>
@@ -111,12 +111,12 @@
                   <div class="button">
                       <div class="div_update_btn">
                           <button class="update_btn">
-                            <a class="update_link" href="update-status/${task.pk}">${task.fields.status}</a>
+                            <a onclick="update_status(${task.pk})">${task.fields.status}</a>
                           </button>
                       </div>
                       <div class="div_delete_btn">
                           <button class="delete_btn">
-                            <a class="delete_link" onclick="delete_todolist(${task.pk})">❌</a>
+                            <a onclick="delete_todolist(${task.pk})">❌</a>
                           </button>
                       </div>
                   </div>
@@ -131,6 +131,8 @@
               method: "POST",
               body: new FormData(document.querySelector('#form_new'))
           }).then(refreshTodolist)
+          document.getElementById('title_input').value = ''
+          document.getElementById('description_input').value = ''
           return false
       }
 
@@ -144,6 +146,11 @@
 
       function delete_todolist(id) {
           let url = "/todolist/delete/" + id;
+          fetch(url).then(refreshTodolist)
+      }
+
+      function update_status(id) {
+          let url = "/todolist/update-status/" + id;
           fetch(url).then(refreshTodolist)
       }
 
