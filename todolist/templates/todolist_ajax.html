@@ -90,9 +90,7 @@
   </table>
 
   <script>
-      async function getDataJson() {
-          return fetch("{% url 'todolist:get_todolist_json' %}").then((result) => result.json())
-      }
+    
 
       async function refreshTodolist() {
           document.getElementById('card_group').innerHTML = ""
