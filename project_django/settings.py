@@ -61,18 +61,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'project_django.urls'
 CORS_ALLOW_ALL_ORIGINS = True
-ACCESS_CONTROL_ALLOW_ORIGIN = ["*"]
 CORS_ALLOW_HEADERS = [
-    "accept",
-    "accept-encoding",
-    "authorization",
     "content-type",
-    "dnt",
-    "origin",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-    # "access-control-allow-origin",
+    "access-control-allow-origin",
 ]
 
 TEMPLATES = [
